@@ -1,13 +1,9 @@
 <?php namespace Core\Models;
 
-class Profesor {
-	private $documento;
-	private $nombres;
-	private $primerApellido;
-	private $segundoApellido;
-	private $telefono;
-	private $email;
-	private $imagen;
+class Asignar {
+	private $id;
+	private $profesor;
+	private $salon;
 	private $db;
 
 	public function __construct() {
@@ -30,7 +26,7 @@ class Profesor {
 	}
 
 	public function listar() {
-		$sql   = "SELECT * FROM profesores";
+		$sql   = "SELECT * FROM profesor";
 		$datos = $this->db->consultaRetorno($sql);
 		return $datos;
 	}
