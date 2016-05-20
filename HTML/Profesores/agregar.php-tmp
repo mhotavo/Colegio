@@ -1,5 +1,3 @@
-
-
 <div class="container">
 	<h2 align="center">Nuevo Profesor</h2>
 	<br>
@@ -13,19 +11,19 @@
 						<div class="col-lg-10">
 							<input type="text" class="form-control" name="inputNombres" placeholder="Nombres" required>
 						</div>
-					</div>		
+					</div>
 					<div class="form-group">
 						<label for="inputPrimerApellido" class="col-lg-2 control-label">Primer Apellido</label>
 						<div class="col-lg-10">
 							<input type="text" class="form-control" name="inputPrimerApellido" placeholder="Primer Apellido" required>
 						</div>
-					</div>		
+					</div>
 					<div class="form-group">
 						<label for="inputSegundoApellido" class="col-lg-2 control-label">Segundo Apellido</label>
 						<div class="col-lg-10">
 							<input type="text" class="form-control" name="inputSegundoApellido" placeholder="Segundo Apellido" >
 						</div>
-					</div>			    	        
+					</div>
 					<div class="form-group">
 						<label for="inputCelular" class="col-lg-2 control-label">Teléfono</label>
 						<div class="col-lg-10">
@@ -58,5 +56,5 @@
 
 		</div>
 		<div class="col-md-2"></div>
-	</div>  
+	</div>
 </div>

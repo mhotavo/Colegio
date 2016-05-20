@@ -32,29 +32,28 @@ class Salon {
 	}
 
 	public function add() {
-		$sql = "INSERT INTO salones
+		echo $sql = "INSERT INTO salones
 					(ID_SALON,
 					 NOMBRE,
 					 NUMERO)
 				VALUES
 					(NULL,
-					'{$this->id}',
 					'{$this->nombre}',
-					'{$this->numero}''); ";
+					'{$this->numero}'); ";
 		$this->db->consultaSimple($sql);
 
 	}
 
 	public function delete() {
-		$sql = "DELETE FROM salones WHERE ID_SALON='{$this->documento}'";
+		$sql = "DELETE FROM salones WHERE ID_SALON='{$this->id}'";
 		$this->db->consultaSimple($sql);
 
 	}
 
 	public function edit() {
-		$sql = "UPDATE salones SET
+		print$sql = "UPDATE salones SET
 		            NOMBRE='{$this->nombre}',
-		            NUMERO='{$this->numero}''
+		            NUMERO='{$this->numero}'
 		            WHERE ID_SALON='{$this->id}';
 ";
 		$this->db->consultaSimple($sql);

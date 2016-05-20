@@ -1,5 +1,5 @@
 <div  class="container box-principal">
-	<h3  align="center"><?php echo $datos['NOMBRE'] ." ". $datos['NUMERO']  ; ?></h3>
+	<h3  align="center"><?php echo $datos['NOMBRE']." ".$datos['NUMERO'];?></h3>
 	<br>
 	<div class="panel panel-success">
 		<div class="panel-heading">
@@ -15,19 +15,19 @@
 							<div class="form-group">
 							<label for="inputNombres" class="col-lg-2 control-label">Nombre</label>
 								<div class="col-lg-10">
-									<input type="text" class="form-control" name="inputNombre" value="<?php echo $datos['NOMBRE']; ?>" required>
+									<input type="text" class="form-control" name="inputNombre" value="<?php echo $datos['NOMBRE'];?>" required>
 								</div>
-							</div>		
+							</div>
 							<div class="form-group">
 								<label for="inputPrimerApellido" class="col-lg-2 control-label">Número</label>
 								<div class="col-lg-10">
-									<input type="text" class="form-control" name="inputNumero" value="<?php echo $datos['NUMERO']; ?>" required>
+									<input type="text" class="form-control" name="inputNumero" value="<?php echo $datos['NUMERO'];?>" required>
 								</div>
-							</div>		
+							</div>
 							<div class="form-group">
 								<div class="col-lg-10 col-lg-offset-2">
-									<input type="hidden" class="form-control" name="id"  required value="<?php echo $datos['ID_SALON']; ?>" >
-									 <button onclick="window.location = '<?php echo URL; ?>Salones'" class="btn btn-default">Regresar</button>
+									<input type="hidden" class="form-control" name="id"  required value="<?php echo $datos['ID_SALON'];?>" >
+									 <button onclick="window.location = '<?php echo URL;?>Salones'" class="btn btn-default">Regresar</button>
 									<button type="submit" class="btn btn-success">Editar</button>
 								</div>
 							</div>
@@ -38,6 +38,6 @@
 				</div>
 				<div class="col-md-2"></div>
 			</div>
-		</div>  
+		</div>
 	</div>
 </div>

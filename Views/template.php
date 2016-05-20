@@ -28,14 +28,7 @@ class Template
 			$('.dataTable').DataTable({
 				"iDisplayLength": -1,
 				"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-				"autoWidth": true,
-				"columns": [{ "orderable": true},     
-				null,
-				null,
-				null,
-				null,
-				null
-				],				         
+				"autoWidth": true,	         
 				"sPaginationType": "full_numbers",
 				"order": [[ 0, 'asc' ], [ 1, 'asc' ]]
 			});
@@ -52,24 +45,23 @@ public function menu()
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
- 
 				<a class="navbar-brand" href="<?php echo URL; ?>profesores">Institución Educativa</a>
 			</div>
-
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
 				<ul class="nav navbar-nav">
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Agregar <span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Agregar &nbsp;<span class="fa fa-plus-circle"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="<?php echo URL; ?>profesores/agregar">Profesor</a></li>
+							<li><a href="<?php echo URL; ?>profesores/agregar">Profesor  </span></a></li>
 							<li class="divider"></li>
-							<li><a href="<?php echo URL; ?>salones/agregar">Salón</a></li>
+							<li><a href="<?php echo URL; ?>salones/agregar">Salón </span></a></li>
+							<li class="divider"></li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="nav navbar-nav">
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Listar <span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Listar &nbsp;<span class="fa fa-bars"></span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="<?php echo URL; ?>profesores">Profesores</a></li>
 							<li class="divider"></li>
@@ -77,7 +69,11 @@ public function menu()
 						</ul>
 					</li>
 				</ul>
-
+				<ul class="nav navbar-nav">
+					<li class="">
+						<a href="<?php echo URL; ?>/Asignar"  role="button" aria-expanded="false"> Asignar &nbsp;<span class="fa fa-cogs"></span></a>
+					</li>
+				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="<?php echo URL; ?>Logout"> Salir  <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
 				</ul>
