@@ -27,7 +27,7 @@
  
 
 		public function listar(){
-			$sql="SELECT * FROM profesor";
+			$sql="SELECT p.DOCUMENTO AS ID, CONCAT(p.NOMBRES, ' ', p.PRIMER_APELLIDO) AS NOMBRE, 'PROFESOR' AS TIPO FROM profesores p UNION select s.ID_SALON AS ID, s.NOMBRE, 'SALON' AS TIPO from salones s";
 			$datos=$this->db->consultaRetorno($sql);
 			return $datos;
 		}

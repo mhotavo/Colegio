@@ -71,7 +71,7 @@ public function menu()
 				</ul>
 				<ul class="nav navbar-nav">
 					<li class="">
-						<a href="<?php echo URL; ?>/Asignar"  role="button" aria-expanded="false"> Asignar &nbsp;<span class="fa fa-cogs"></span></a>
+						<a href="<?php echo URL; ?>Asignar"  role="button" aria-expanded="false"> Asignar &nbsp;<span class="fa fa-cogs"></span></a>
 					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">

@@ -12,6 +12,14 @@ class Template {
 				<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 				<script src="<?php echo URL;?>Views/js/jquery.min.js"></script>
 
+				<script>
+					$(document).on(ready,function(){
+						$('button').on('click' function(){
+
+						})
+					})
+				</script>
+
 		<?php
 	}
 
@@ -67,7 +75,7 @@ class Template {
 						</ul>
 						<ul class="nav navbar-nav">
 							<li class="">
-								<a href="<?php echo URL;?>/Asignar"  role="button" aria-expanded="false"> Asignar &nbsp;
+								<a href="<?php echo URL;?>Asignar"  role="button" aria-expanded="false"> Asignar &nbsp;
 		<span class="fa fa-cogs"></span></a>
 							</li>
 						</ul>

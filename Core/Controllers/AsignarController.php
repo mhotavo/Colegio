@@ -1,6 +1,5 @@
 <?php namespace Core\Controllers;
 use Core\Models\Asignar as Asignar;
-use Views\template as Template;
 
 
 class AsignarController{
