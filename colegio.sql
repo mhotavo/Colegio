@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-05-2016 a las 00:05:45
+-- Tiempo de generación: 23-05-2016 a las 23:59:33
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.34
 
@@ -42,7 +42,7 @@ CREATE TABLE `profesores` (
 
 INSERT INTO `profesores` (`DOCUMENTO`, `NOMBRES`, `PRIMER_APELLIDO`, `SEGUNDO_APELLIDO`, `TELEFONO`, `EMAIL`, `IMAGEN`) VALUES
 (2, 'Hugo Ferney', 'Otavo', 'Varon', '3217518540', 'hugo@gmail.com', '524113095909_10206077034593136_2877799362829434374_n.jpg'),
-(3, 'Milton', 'Hernando', 'Otavo', '322321212', 'nicol.mesa@gmail.com', '');
+(3, 'Milton', 'Otavo', 'Varón', '322321212', 'milton@gmail.com', '471616215_10203344202754048_8237009553896869607_n.jpg');
 
 -- --------------------------------------------------------
 
@@ -51,10 +51,17 @@ INSERT INTO `profesores` (`DOCUMENTO`, `NOMBRES`, `PRIMER_APELLIDO`, `SEGUNDO_AP
 --
 
 CREATE TABLE `profesor_salon` (
-  `ID_HORARIO` int(11) NOT NULL,
+  `ID` int(11) NOT NULL,
   `ID_PROFESOR` int(11) NOT NULL,
   `ID_SALON` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `profesor_salon`
+--
+
+INSERT INTO `profesor_salon` (`ID`, `ID_PROFESOR`, `ID_SALON`) VALUES
+(1, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -73,7 +80,8 @@ CREATE TABLE `salones` (
 --
 
 INSERT INTO `salones` (`ID_SALON`, `NOMBRE`, `NUMERO`) VALUES
-(2, 'Aula ', '2');
+(2, 'Salón', '1'),
+(3, 'Salón De Informática ', '2');
 
 -- --------------------------------------------------------
 
@@ -116,9 +124,9 @@ ALTER TABLE `profesores`
 -- Indices de la tabla `profesor_salon`
 --
 ALTER TABLE `profesor_salon`
-  ADD PRIMARY KEY (`ID_HORARIO`),
-  ADD KEY `ID_PROFESOR` (`ID_PROFESOR`),
-  ADD KEY `ID_SALON` (`ID_SALON`);
+  ADD PRIMARY KEY (`ID`,`ID_PROFESOR`,`ID_SALON`),
+  ADD KEY `ID_SALON` (`ID_SALON`),
+  ADD KEY `ID_PROFESOR` (`ID_PROFESOR`);
 
 --
 -- Indices de la tabla `salones`
@@ -145,17 +153,17 @@ ALTER TABLE `profesores`
 -- AUTO_INCREMENT de la tabla `profesor_salon`
 --
 ALTER TABLE `profesor_salon`
-  MODIFY `ID_HORARIO` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `salones`
 --
 ALTER TABLE `salones`
-  MODIFY `ID_SALON` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID_SALON` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Restricciones para tablas volcadas
 --
