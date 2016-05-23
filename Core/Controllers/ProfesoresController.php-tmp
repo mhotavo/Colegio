@@ -68,7 +68,7 @@ class ProfesoresController {
 				$this->Profesores->__set("imagen", $_POST['nombreImagen']);
 			}
 
-			$this->Profesores->edit();  
+			$this->Profesores->edit();
 			header("Location:".URL."Profesores");
 
 		}

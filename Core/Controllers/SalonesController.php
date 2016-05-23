@@ -23,7 +23,7 @@ class SalonesController{
 
 	public function agregar(){
 		if ($_POST) {
-			$this->Salon->__set("nombre", ucwords(strtolower($_POST['inputNombre'])) );
+			$this->Salon->__set("nombre", ucwords(mb_strtolower ($_POST['inputNombre'], 'UTF-8') ) );
 			$this->Salon->__set("numero", $_POST['inputNumero']) ;
 			$this->Salon->add();   
 			header("Location:" . URL . "Salones");	
@@ -36,8 +36,9 @@ class SalonesController{
 			$datos=$this->Salon->view();
 			return $datos;
 		} else { 
+
 			$this->Salon->__set("id", $_POST['id']);
-			$this->Salon->__set("nombre", ucwords(strtolower($_POST['inputNombre'])) );
+			$this->Salon->__set("nombre", ucwords(mb_strtolower ($_POST['inputNombre'], 'UTF-8') ) );
 			$this->Salon->__set("numero", $_POST['inputNumero']) ;
 			$this->Salon->edit();   
 			header("Location:" . URL . "Salones");

@@ -7,3 +7,12 @@ function DeleteItem(contenido, url){
 		window.location=url;
 	}
 }
+
+function Salones(){
+			 var profesor= $("#profesor").val();
+			 $.post('../asignar/listarSalones',{profesor:profesor},  function(resp){
+			 	console.log(resp);
+			 }) 
+ 
+
+}

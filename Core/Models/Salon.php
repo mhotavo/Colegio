@@ -32,7 +32,7 @@
 		}
 
 		public function add(){
-			echo $sql="INSERT INTO salones 
+			$sql="INSERT INTO salones 
 					(ID_SALON,
 					 NOMBRE,
 					 NUMERO) 
@@ -51,10 +51,10 @@
 		}
 
 		 public function edit() {
-		       print $sql="UPDATE salones SET 
+		         $sql="UPDATE salones SET 
 		            NOMBRE='{$this->nombre}',
 		            NUMERO='{$this->numero}'
-		            WHERE ID_SALON='{$this->id}';";
+		            WHERE ID_SALON='{$this->id}';";  
 		       $this->db->consultaSimple($sql);
 		  }
 

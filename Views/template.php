@@ -9,10 +9,10 @@ class Template
 		<title>Colegio</title>
 
 		<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>Views/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>Views/css/general.css">
 		<link rel="stylesheet" href="<?php echo URL; ?>Views/fontawesome/css/font-awesome.min.css">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<script src="<?php echo URL; ?>Views/js/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>Views/css/general.css">
 
 		<?php  
 	} 
@@ -65,13 +65,14 @@ public function menu()
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="<?php echo URL; ?>profesores">Profesores</a></li>
 							<li class="divider"></li>
-							<li><a href="<?php echo URL; ?>salones">Salónes</a></li>
+							<li><a href="<?php echo URL; ?>salones">Salónes</a></li>							<li class="divider"></li>
+							<li><a href="<?php echo URL; ?>asignar">Asignaciones</a></li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="nav navbar-nav">
 					<li class="">
-						<a href="<?php echo URL; ?>Asignar"  role="button" aria-expanded="false"> Asignar &nbsp;<span class="fa fa-cogs"></span></a>
+						<a href="<?php echo URL; ?>Asignar/agregar"  role="button" aria-expanded="false"> Asignar &nbsp;<span class="fa fa-cogs"></span></a>
 					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
