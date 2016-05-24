@@ -47,9 +47,9 @@ class AsignarController{
 	}
 
 	public function ver($id){
-			$this->Asignar->__set("id", $id);
-			$datos=$this->Asignar->view();
-			return $datos;	
+		$this->Asignar->__set("id", $id);
+		$datos=$this->Asignar->view();
+		return $datos;	
 	}
 
 	public function eliminar($id){
@@ -59,15 +59,13 @@ class AsignarController{
 	}	
 
 	public function listarSalones(){
-			if ($_POST) {
-				$this->Asignar->__set("profesor", $_POST['profesor']);
-				$datos=$this->Asignar->listarSalones(); 
-				return $datos;
-			}
+		if ($_POST) {
+			$this->Asignar->__set("profesor", $_POST['profesor']);
+			$datos=$this->Asignar->listarSalones(); 
+			echo json_encode($datos);
+		}
 	}
-
 }
-
 $Asignaciones= new AsignarController();
 
 

@@ -61,12 +61,10 @@ class AsignarController {
 		if ($_POST) {
 			$this->Asignar->__set("profesor", $_POST['profesor']);
 			$datos = $this->Asignar->listarSalones();
-			return $datos;
+			echo json_encode($datos);
 		}
 	}
-
 }
-
 $Asignaciones = new AsignarController();
 
 ?>

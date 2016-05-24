@@ -27,7 +27,7 @@
 					<div class="form-group">
 						<label for="inputEmail" class="col-lg-2 control-label" >Salón:</label>
 						<div class="col-lg-10">
-							<select class="form-control" name="salones[]" multiple=""  id="salones[]" required>
+							<select class="form-control" name="salones[]" multiple=""  id="salones" required>
 								<?php 
 								foreach ($datos as $clave=>$valor)
 									{ if ($valor['TIPO']=="SALON") {?>							  				   		
@@ -42,7 +42,7 @@
 		<div class="row">
 			<div class="col-md-12" align="center">
 				<button type="submit" class="btn btn-success">Guardar</button>	
-				<div id="result"></div>
+				<div id="result" name="result"></div>
 			</div>
 		</div>
 	</form>

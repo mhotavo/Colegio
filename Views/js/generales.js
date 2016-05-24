@@ -8,11 +8,19 @@ function DeleteItem(contenido, url){
 	}
 }
 
-function Salones(){
-			 var profesor= $("#profesor").val();
-			 $.post('../asignar/listarSalones',{profesor:profesor},  function(resp){
-			 	console.log(resp);
-			 }) 
- 
-
+function Salones(){	
+	var profesor= $("#profesor").val();
+	$.ajax({
+		url:"../Asignar/listarSalones",
+		type:"POST",
+		data: "profesor="+profesor,
+		beforeSend: function(){
+			console.log("enviando datos a DB")
+		},
+		success: function(data){
+			console.log(data);
+		}
+	})
 }
+
+

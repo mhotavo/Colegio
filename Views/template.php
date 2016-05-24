@@ -75,9 +75,6 @@ public function menu()
 						<a href="<?php echo URL; ?>Asignar/agregar"  role="button" aria-expanded="false"> Asignar &nbsp;<span class="fa fa-cogs"></span></a>
 					</li>
 				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="<?php echo URL; ?>Logout"> Salir  <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
-				</ul>
 			</div>
 		</div>
 	</nav>

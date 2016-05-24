@@ -1,5 +1,3 @@
-
-
 <div id="container">
   <h2 align="center">Profesores <i class="fa fa-exchange" aria-hidden="true"></i> Salónes</h2>
   <div class="row">

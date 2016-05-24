@@ -40,14 +40,14 @@ class Asignar {
 	public function add() {
 		foreach ($this->salones as $salon) {
 			$sql = "INSERT INTO profesor_salon
-					(ID,
-					 ID_PROFESOR,
-					 ID_SALON )
-				VALUES
-					(NULL,
-					'{$this->profesor}',
-					'{$salon}'
-					 ); ";
+			(ID,
+			ID_PROFESOR,
+			ID_SALON )
+			VALUES
+			(NULL,
+			'{$this->profesor}',
+			'{$salon}'
+			); ";
 			$this->db->consultaSimple($sql);
 		}
 	}
@@ -60,13 +60,13 @@ class Asignar {
 
 	public function edit() {
 		$sql = "UPDATE profesores SET
-		            NOMBRES='{$this->nombres}',
-		            PRIMER_APELLIDO ='{$this->primerApellido}',
-		            SEGUNDO_APELLIDO ='{$this->segundoApellido}',
-		            TELEFONO ='{$this->telefono}',
-		            EMAIL ='{$this->email}',
-		            IMAGEN ='{$this->imagen}'
-		            WHERE DOCUMENTO='{$this->documento}';
+		NOMBRES='{$this->nombres}',
+		PRIMER_APELLIDO ='{$this->primerApellido}',
+		SEGUNDO_APELLIDO ='{$this->segundoApellido}',
+		TELEFONO ='{$this->telefono}',
+		EMAIL ='{$this->email}',
+		IMAGEN ='{$this->imagen}'
+		WHERE DOCUMENTO='{$this->documento}';
 ";
 		$this->db->consultaSimple($sql);
 	}
@@ -79,7 +79,7 @@ class Asignar {
 	}
 
 	public function listarSalones() {
-		$sql   = "SELECT s.ID_SALON, s.NOMBRE FROM profesor_salon ps INNER JOIN salones s ON s.ID_SALON=ps.ID_SALON WHERE ID_PROFESOR='{$this->profesor}'";
+		$sql   = "SELECT s.ID_SALON as salon, s.NOMBRE as nombre FROM profesor_salon ps INNER JOIN salones s ON s.ID_SALON=ps.ID_SALON WHERE ID_PROFESOR='{$this->profesor}'";
 		$datos = $this->db->consultaRetorno($sql);
 		$row   = mysqli_fetch_assoc($datos);
 		return $row;
