@@ -13,8 +13,8 @@
         <table class="table table-striped table-hover dataTable" id="ProfesoresTabla" >
           <thead>
             <tr>
-              <th>&nbsp;</th>
-              <th>Profesor</th>
+               
+              <th colspan="2">Profesor</th>
               <th>Salón</th>
               <th>Acción</th> 
             </tr>
@@ -25,8 +25,7 @@
                 <td> <a href="<?php echo URL; ?>Profesores/ver/<?php echo $row['IMAGEN']; ?>"><img class="avatar" src="<?php  echo URL; ?>HTML/Profesores/avatars/<?php echo  !empty($row['IMAGEN']) ? $row['IMAGEN'] : 'no-image.png'    ; ?>"> </a></td>
                 <td><?php  echo $row['NOMBRE_PROFESOR']; ?></td>
                 <td><?php  echo $row['NOMBRE']; ?></td>
-                <td><a  class="btn btn-warning" href="<?php echo URL; ?>Asignar/editar/<?php echo $row['DOCUMENTO']; ?>">Editar</a> 
-                  <a  class="btn btn-danger" onclick="DeleteItem('¿Está seguro de eliminar esta asignación?','<?php echo URL; ?>Asignar/eliminar/<?php echo $row['ID']; ?>')" >Eliminar</a> 
+                <td><a  class="btn btn-danger" onclick="DeleteItem('¿Está seguro de eliminar esta asignación?','<?php echo URL; ?>Asignar/eliminar/<?php echo $row['ID']; ?>')" >Eliminar</a> 
                 </td>
               </tr>
               <?php 
