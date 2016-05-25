@@ -79,10 +79,14 @@ class Asignar {
 	}
 
 	public function listarSalones(){
-		$sql="SELECT s.ID_SALON as salon, s.NOMBRE as nombre FROM profesor_salon ps INNER JOIN salones s ON s.ID_SALON=ps.ID_SALON WHERE ID_PROFESOR='{$this->profesor}'";
-		$datos = $this->db->consultaRetorno($sql);
-		$row = mysqli_fetch_assoc($datos);
-		return $row;
+		$sql="SELECT s.ID_SALON as salon, s.NOMBRE as nombre FROM profesor_salon ps INNER JOIN salones s ON s.ID_SALON!=ps.ID_SALON WHERE ID_PROFESOR='{$this->profesor}'";
+		$data = $this->db->consultaRetorno($sql);
+		$datos[]=array();
+		while ($row = mysqli_fetch_assoc($data)) {
+			$datos[]=$row;
+		}
+
+		return $datos;
 	}
 
 } 

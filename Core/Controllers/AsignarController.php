@@ -54,22 +54,11 @@ class AsignarController{
 	}	
 
 	public function listarSalones(){
-		if ($_POST) {
-			//$this->Asignar->__set("profesor", $_POST['profesor']);
-			//$datos=$this->Asignar->listarSalones(); 
-			//echo json_encode( $datos, JSON_UNESCAPED_UNICODE );
-			for ($i = 0; $i < 10; $i++) {
-				$datos[] = array('ronda' => $i, 'jugadores' => array(
-					array('nombre' => 'Pepito', 'puntos' => rand(0, 100)),
-					array('nombre' => 'Juanito', 'puntos' => rand(0, 100)),
-					array('nombre' => 'Menganito', 'puntos' => rand(0, 100)),
-					));
-			}
-			header("Content-Type: application/json", true);
-			header('Content-type: application/json');
-			echo json_encode($datos);
-
-		}
+	 
+			$this->Asignar->__set("profesor", $_GET['profesor']);
+			$datos=$this->Asignar->listarSalones(); 
+			//echo count($datos);
+			echo json_encode( $datos, JSON_UNESCAPED_UNICODE );
 	}
 }
 $Asignaciones= new AsignarController();

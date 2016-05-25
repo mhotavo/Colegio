@@ -35,11 +35,11 @@
 										<label for="inputEmail" class="col-lg-2 control-label" >Salón:</label>
 										<div class="col-lg-10">
 											<select class="form-control" name="salones[]" multiple=""  id="salones" required>
-												<?php 
+												<?php /* 
 												foreach ($datos as $clave=>$valor)
 													{ if ($valor['TIPO']=="SALON") {?>							  				   		
 														<option value="<?php  echo $valor['ID']; ?>"><?php  echo $valor['NOMBRE'] ; ?></option>
-														<?php } }?>
+														<?php } } */?>
 													</select>
 												</div>
 											</div> 
