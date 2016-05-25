@@ -1,6 +1,5 @@
 <?php namespace Core\Controllers;
 use Core\Models\Salon as Salon;
-use Views\template as Template;
 
 
 class SalonesController{
@@ -13,9 +12,7 @@ class SalonesController{
 	}
 
 	public function index(){
-			#listar Salones
-		$this->template = new Template();
-		$this->template->dataTable();
+		#listar Salones
 		$datos=$this->Salon->listar();
 		return $datos;
 

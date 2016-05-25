@@ -1,8 +1,5 @@
 <?php namespace Core\Controllers;
 use Core\Models\Asignar as Asignar;
-use Views\template as Template;
-
-
 class AsignarController{
 
 	private $Asignar;
@@ -12,8 +9,6 @@ class AsignarController{
 	}
 
 	public function index(){
-		$this->template = new Template();
-		$this->template->dataTable();
 		$datos=$this->Asignar->listar();
 		return $datos;
 

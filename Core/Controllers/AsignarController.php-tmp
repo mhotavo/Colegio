@@ -1,6 +1,5 @@
 <?php namespace Core\Controllers;
 use Core\Models\Asignar as Asignar;
-use Views\template as Template;
 
 class AsignarController {
 
@@ -11,8 +10,6 @@ class AsignarController {
 	}
 
 	public function index() {
-		$this->template = new Template();
-		$this->template->dataTable();
 		$datos = $this->Asignar->listar();
 		return $datos;
 
@@ -64,9 +61,9 @@ class AsignarController {
 			//echo json_encode( $datos, JSON_UNESCAPED_UNICODE );
 			for ($i = 0; $i < 10; $i++) {
 				$datos[] = array('ronda' => $i, 'jugadores' => array(
-						array('nombre'         => 'Pepito', 'puntos'         => rand(0, 100)),
-						array('nombre'         => 'Juanito', 'puntos'         => rand(0, 100)),
-						array('nombre'         => 'Menganito', 'puntos'         => rand(0, 100)),
+					array('nombre'         => 'Pepito', 'puntos'         => rand(0, 100)),
+					array('nombre'         => 'Juanito', 'puntos'         => rand(0, 100)),
+					array('nombre'         => 'Menganito', 'puntos'         => rand(0, 100)),
 					));
 			}
 			header("Content-Type: application/json", true);

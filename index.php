@@ -9,10 +9,8 @@ define('DB_NAME', 'colegio');
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', realpath(dirname(__FILE__)) . DS);
 define('URL', "http://localhost/colegio/");
+define('HTML_DIR', 'HTML/');
 
-require_once "Views/template.php";
-$template=new Views\Template();
-$template->menu();
 require_once "Core/Models/Conexion.php";
 require_once "Core/Config/Autoload.php";
 Core\Config\Autoload::run();

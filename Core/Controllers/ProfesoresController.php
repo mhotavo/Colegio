@@ -1,6 +1,5 @@
 <?php namespace Core\Controllers;
 use Core\Models\Profesor as Profesor;
-use Views\template as Template;
 
 class ProfesoresController {
 
@@ -12,8 +11,6 @@ class ProfesoresController {
 
 	public function index() {
 		#listar Profesores
-		$this->template = new Template();
-		$this->template->dataTable();
 		$datos = $this->Profesores->listar();
 		return $datos;
 
