@@ -25,12 +25,6 @@ class Asignar {
 		return NULL;  
 	}  
 	
-	public function listarProfesoresSalones(){
-		$sql="SELECT p.DOCUMENTO AS ID, CONCAT(p.NOMBRES, ' ', p.PRIMER_APELLIDO) AS NOMBRE, 'PROFESOR' AS TIPO FROM profesores p UNION select s.ID_SALON AS ID, s.NOMBRE, 'SALON' AS TIPO from salones s";
-		$datos=$this->db->consultaRetorno($sql);
-		return $datos;
-	}
-	
 	public function listar(){
 		$sql="SELECT p.IMAGEN, ps.ID, s.NOMBRE, s.NUMERO, s.ID_SALON, p.DOCUMENTO , CONCAT (p.NOMBRES, ' ', p.PRIMER_APELLIDO, ' ', p.SEGUNDO_APELLIDO) AS NOMBRE_PROFESOR FROM profesor_salon ps INNER JOIN profesores p ON ps.ID_PROFESOR= p.DOCUMENTO LEFT JOIN salones s ON s.ID_SALON=ps.ID_SALON";
 		$datos=$this->db->consultaRetorno($sql);

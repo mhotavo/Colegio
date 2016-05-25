@@ -16,7 +16,7 @@ function Salones(){
 			for (var i in resp) {
 				if (resp[i].salon!=null) {
 					$("#salones").append('<option value='+resp[i].salon+'>'+resp[i].nombre+'</option>');
-					console.log(resp);
+					//console.log(resp);
 				}
 			}
 		}

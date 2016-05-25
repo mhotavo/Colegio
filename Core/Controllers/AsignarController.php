@@ -1,17 +1,16 @@
 <?php namespace Core\Controllers;
 use Core\Models\Asignar as Asignar;
+use Core\Models\Profesor as Profesor;
 class AsignarController{
 
 	private $Asignar;
 	public function __construct(){
 		$this->Asignar = new Asignar();
-
 	}
 
 	public function index(){
 		$datos=$this->Asignar->listar();
 		return $datos;
-
 	}
 
 	public function agregar(){
@@ -21,7 +20,8 @@ class AsignarController{
 			$this->Asignar->add();   
 			header("Location:" . URL . "Asignar");	
 		} else {
-			$datos=$this->Asignar->listarProfesoresSalones();
+			$this->Profesor = new Profesor();
+			$datos=$this->Profesor->listar();
 			return $datos;
 		}
 	}
@@ -57,7 +57,6 @@ class AsignarController{
 	 
 			$this->Asignar->__set("profesor", $_GET['profesor']);
 			$datos=$this->Asignar->listarSalones(); 
-			//echo count($datos);
 			echo json_encode( $datos, JSON_UNESCAPED_UNICODE );
 	}
 }

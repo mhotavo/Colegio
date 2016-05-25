@@ -20,9 +20,9 @@
 										<option value="">[...]</option>
 										<?php 
 										foreach ($datos as $clave=>$valor)
-											{ if ($valor['TIPO']=="PROFESOR") {?>								 		   		
-												<option value="<?php  echo $valor['ID']; ?>"><?php  echo $valor['NOMBRE'] ; ?></option>
-												<?php } } ?>
+											{ ?>								 		   		
+												<option value="<?php  echo $valor['DOCUMENTO']; ?>"><?php  echo $valor['NOMBRES']." ".$valor['PRIMER_APELLIDO']." ".$valor['SEGUNDO_APELLIDO'] ; ?></option>
+												<?php } ?>
 											</select>
 										</div>
 									</div> 	
@@ -32,28 +32,23 @@
 							<div class="col-md-5">
 								<fieldset>
 									<div class="form-group">
-										<label for="inputEmail" class="col-lg-2 control-label" >Salón:</label>
+										<label for="inputEmail" class="col-lg-2 control-label" >Salónes:</label>
 										<div class="col-lg-10">
-											<select class="form-control" name="salones[]" multiple=""  id="salones" required>
-												<?php /* 
-												foreach ($datos as $clave=>$valor)
-													{ if ($valor['TIPO']=="SALON") {?>							  				   		
-														<option value="<?php  echo $valor['ID']; ?>"><?php  echo $valor['NOMBRE'] ; ?></option>
-														<?php } } */?>
-													</select>
-												</div>
-											</div> 
-										</fieldset>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12" align="center">
-										<button type="submit" class="btn btn-success">Guardar</button>	
-										<div id="result" name="result"></div>
-									</div>
-								</div>
-							</form>
-						</div>  
-						<?php include(HTML_DIR.'/overall/footer.php') ?> 
-					</body>
-					</html>			
+											<select class="form-control" name="salones[]" multiple=""  id="salones" required style="height: 30%;">
+											</select>
+										</div>
+									</div> 
+								</fieldset>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12" align="center">
+								<button type="submit" class="btn btn-success">Guardar</button>	
+								<div id="result" name="result"></div>
+							</div>
+						</div>
+					</form>
+				</div>  
+				<?php include(HTML_DIR.'/overall/footer.php') ?> 
+			</body>
+			</html>			
