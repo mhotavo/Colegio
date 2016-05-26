@@ -53,18 +53,6 @@ class Asignar {
 
 	}
 
-	public function edit() {
-		$sql="UPDATE profesores SET 
-		NOMBRES='{$this->nombres}',
-		PRIMER_APELLIDO ='{$this->primerApellido}',
-		SEGUNDO_APELLIDO ='{$this->segundoApellido}',
-		TELEFONO ='{$this->telefono}',
-		EMAIL ='{$this->email}',
-		IMAGEN ='{$this->imagen}'
-		WHERE DOCUMENTO='{$this->documento}';";
-		$this->db->consultaSimple($sql);
-	}
-
 	public function view(){
 		echo $sql="SELECT * FROM profesor_salon WHERE ID='{$this->id}'";
 		$datos = $this->db->consultaRetorno($sql);
@@ -72,14 +60,23 @@ class Asignar {
 		return $row;
 	}
 
-	public function listarSalones(){
+	public function salones(){
 		$sql="SELECT s.ID_SALON as salon, s.NOMBRE as nombre FROM salones s WHERE s.ID_SALON NOT IN(SELECT ID_SALON FROM profesor_salon WHERE ID_PROFESOR='{$this->profesor}' )";
 		$data = $this->db->consultaRetorno($sql);
 		$datos[]=array();
 		while ($row = mysqli_fetch_assoc($data)) {
 			$datos[]=$row;
 		}
+		return $datos;
+	}
 
+	public function profesores(){
+		$sql="SELECT DOCUMENTO as id, CONCAT(NOMBRES, ' ', PRIMER_APELLIDO, ' ', SEGUNDO_APELLIDO) as nombre FROM profesores";
+		$data = $this->db->consultaRetorno($sql);
+		#$datos[]=array();
+		while ($row = mysqli_fetch_assoc($data)) {
+		$datos[]=$row;
+		}
 		return $datos;
 	}
 

@@ -54,10 +54,14 @@ class AsignarController{
 	}	
 
 	public function listarSalones(){
-	 
-			$this->Asignar->__set("profesor", $_GET['profesor']);
-			$datos=$this->Asignar->listarSalones(); 
-			echo json_encode( $datos, JSON_UNESCAPED_UNICODE );
+		$this->Asignar->__set("profesor", $_GET['profesor']);
+		$datos=$this->Asignar->salones(); 
+		echo json_encode( $datos, JSON_UNESCAPED_UNICODE );
+	}
+
+	public function listarProfesores(){
+		$datos=$this->Asignar->profesores(); 
+		echo json_encode( $datos, JSON_UNESCAPED_UNICODE );
 	}
 }
 $Asignaciones= new AsignarController();
