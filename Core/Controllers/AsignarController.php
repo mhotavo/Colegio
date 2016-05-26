@@ -1,6 +1,7 @@
 <?php namespace Core\Controllers;
 use Core\Models\Asignar as Asignar;
 use Core\Models\Profesor as Profesor;
+use Core\Models\PHPExcel as PHPExcel;
 class AsignarController{
 
 	private $Asignar;
@@ -11,6 +12,16 @@ class AsignarController{
 	public function index(){
 		$datos=$this->Asignar->listar();
 		return $datos;
+	}
+
+	public function listar(){
+		$datos=$this->Asignar->listar();
+		return $datos;
+	}
+
+	public function informeExcel(){
+		$this->PHPExcel = new PHPExcel();
+		header("Location:" . URL . "Asignar/listar");	
 	}
 
 	public function agregar(){
@@ -24,27 +35,6 @@ class AsignarController{
 			$datos=$this->Profesor->listar();
 			return $datos;
 		}
-	}
-
-	public function editar($id){
-		if (!$_POST) { 
-			$this->Asignar->__set("id", $id);
-			$datos=$this->Asignar->view();
-			return $datos;
-		} else { 
-			$this->Asignar->__set("id", $_POST['id']);
-			$this->Asignar->__set("nombre", ucwords(strtolower($_POST['inputNombre'])) );
-			$this->Asignar->__set("numero", $_POST['inputNumero']) ;
-			$this->Asignar->edit();   
-			header("Location:" . URL . "Asignar");
-
-		}
-	}
-
-	public function ver($id){
-		$this->Asignar->__set("id", $id);
-		$datos=$this->Asignar->view();
-		return $datos;	
 	}
 
 	public function eliminar($id){

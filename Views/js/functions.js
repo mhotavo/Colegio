@@ -1,6 +1,3 @@
-function __(id){
-	return document.getElementById(id);
-}
 function DeleteItem(contenido, url){
 	var action= window.confirm(contenido);
 	if (action) {
@@ -8,7 +5,7 @@ function DeleteItem(contenido, url){
 	}
 }
 
-function Salones(){
+function cargarSalones(){
 	$('#salones').empty();
 	var profesor= $("#profesor").val();
 	$.getJSON('../asignar/listarSalones',{profesor:profesor}, function(resp){
@@ -16,13 +13,19 @@ function Salones(){
 			for (var i in resp) {
 				if (resp[i].salon!=null) {
 					$("#salones").append('<option value='+resp[i].salon+'>'+resp[i].nombre+'</option>');
-					//console.log(resp);
 				}
 			}
 		}
-
 	})
-
 }
+
+function cargarProfesores(){
+	$.getJSON('../asignar/listarProfesores', function(resp){
+		$.each( resp, function(key,value) {
+			$("#profesor").append('<option value='+value.id+'>'+value.nombre+'</option>');
+		});
+	})
+}
+
 
 

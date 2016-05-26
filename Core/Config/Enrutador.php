@@ -6,10 +6,6 @@ class Enrutador
 		$controlador = ucwords($request->getControlador()) . "Controller";
 		$ruta = ROOT . "Core". DS . "Controllers" . DS . $controlador .".php";
 		$metodo = $request->getMetodo();
-
-		if($metodo == "index.php"){
-			$metodo = "index";
-		}
 		$argumento = $request->getArgumento();
 		if(is_readable($ruta)){
 			require_once $ruta;
@@ -23,12 +19,12 @@ class Enrutador
 			}
 		}
 			//Cargar vista
-			$ruta = ROOT . "HTML" . DS . ucwords($request->getControlador()) . DS . $request->getMetodo() . ".php";
-			if(is_readable($ruta)){
-				require_once $ruta;
-			}else{
+		$ruta = ROOT . "HTML" . DS . ucwords($request->getControlador()) . DS . $request->getMetodo() . ".php";
+		if(is_readable($ruta)){
+			require_once $ruta;
+		}else{
 				#print "No se encontro la vista";
-			}	
+		}	
 	}
 }
 

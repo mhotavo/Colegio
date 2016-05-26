@@ -1,15 +1,13 @@
-	<html ng-app="Asignar">
+	<html>
 	<head>
 		<?php include(HTML_DIR.'/overall/header.php') ?>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-		<script src="<?php echo URL; ?>Views/js/controller.js"></script> 
 	</head>
-	<body ng-controller="AsignarController">
+	<body>
 		<?php include(HTML_DIR.'/overall/nav.php') ?>
 		<div class="container">
 			<h2 align="center">Profesor <i class="fa fa-exchange" aria-hidden="true"></i> Salón</h2>
 			<br>
-			<form class="form-horizontal" method="POST">
+			<form class="form-horizontal" method="POST" name="form" id="form">
 				<div class="row">
 					<div class="col-md-1"></div>
 					<div class="col-md-5">
@@ -17,9 +15,8 @@
 							<div class="form-group">
 								<label for="inputEmail" class="col-lg-2 control-label">Profesor:</label>
 								<div class="col-lg-10">
-									<select class="form-control" name="profesor" id="profesor" required onchange="Salones();">
-										<option value="1">[...]</option>
-										<option ng-repeat="profesor in profesores"  value="{{profesor.id}}">{{profesor.nombre}}</option>
+									<select class="form-control" name="profesor" id="profesor" required onchange="cargarSalones();">
+										<option value="">[...]</option>
 									</select>
 								</div>
 							</div> 	
@@ -45,5 +42,8 @@
 			</form>
 		</div>  
 		<?php include(HTML_DIR.'/overall/footer.php') ?> 
+		<script>
+			$(document).ready(cargarProfesores);
+		</script>
 	</body>
 	</html>			

@@ -19,17 +19,17 @@
 							<form class="form-horizontal" enctype="multipart/form-data" method="POST">
 								<fieldset>
 									<div class="form-group">
+										<label for="inputPrimerApellido" class="col-lg-2 control-label">Número</label>
+										<div class="col-lg-10">
+											<input type="text" class="form-control" name="inputNumero" value="<?php echo $datos['NUMERO']; ?>" required >
+										</div>
+									</div>
+									<div class="form-group">
 										<label for="inputNombres" class="col-lg-2 control-label">Nombre</label>
 										<div class="col-lg-10">
 											<input type="text" class="form-control" name="inputNombre" value="<?php echo $datos['NOMBRE']; ?>" required>
 										</div>
-									</div>		
-									<div class="form-group">
-										<label for="inputPrimerApellido" class="col-lg-2 control-label">Número</label>
-										<div class="col-lg-10">
-											<input type="text" class="form-control" name="inputNumero" value="<?php echo $datos['NUMERO']; ?>" required>
-										</div>
-									</div>		
+									</div>				
 									<div class="form-group">
 										<div class="col-lg-10 col-lg-offset-2">
 											<input type="hidden" class="form-control" name="id"  required value="<?php echo $datos['ID_SALON']; ?>" >
