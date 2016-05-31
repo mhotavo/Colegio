@@ -63,7 +63,6 @@ class Asignar {
 	public function salones(){
 		$sql="SELECT s.ID_SALON as salon, s.NOMBRE as nombre FROM salones s WHERE s.ID_SALON NOT IN(SELECT ID_SALON FROM profesor_salon WHERE ID_PROFESOR='{$this->profesor}' )";
 		$data = $this->db->consultaRetorno($sql);
-		$datos[]=array();
 		while ($row = mysqli_fetch_assoc($data)) {
 			$datos[]=$row;
 		}
@@ -73,7 +72,6 @@ class Asignar {
 	public function profesores(){
 		$sql="SELECT DOCUMENTO as id, CONCAT(NOMBRES, ' ', PRIMER_APELLIDO, ' ', SEGUNDO_APELLIDO) as nombre FROM profesores";
 		$data = $this->db->consultaRetorno($sql);
-		#$datos[]=array();
 		while ($row = mysqli_fetch_assoc($data)) {
 		$datos[]=$row;
 		}

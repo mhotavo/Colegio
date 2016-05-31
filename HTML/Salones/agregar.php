@@ -4,12 +4,12 @@
 	</head>
 	<body>
 		<?php include(HTML_DIR.'/overall/nav.php') ?>
-		<div class="container">
+		<div class="container-fluid"  >
 			<h2 align="center">Nuevo Salón</h2>
 			<br>
 			<div class="row">
-				<div class="col-md-2"></div>
-				<div class="col-md-8">
+				<div class="col-xs-2 col-sm-2 col-md-2"></div>
+				<div class="col-xs-8 col-sm-8 col-md-8">
 					<form class="form-horizontal" enctype="multipart/form-data" method="POST">
 						<fieldset>
 							<div class="form-group">
@@ -35,7 +35,7 @@
 
 
 				</div>
-				<div class="col-md-2"></div>
+				<div class="col-xs-2 col-sm-2 col-md-2"></div>
 			</div>  
 		</div>
 		<?php include(HTML_DIR.'/overall/footer.php') ?> 

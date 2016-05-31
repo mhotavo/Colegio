@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-05-2016 a las 00:40:56
+-- Tiempo de generación: 01-06-2016 a las 00:46:49
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.34
 
@@ -42,8 +42,9 @@ CREATE TABLE `profesores` (
 
 INSERT INTO `profesores` (`DOCUMENTO`, `NOMBRES`, `PRIMER_APELLIDO`, `SEGUNDO_APELLIDO`, `TELEFONO`, `EMAIL`, `IMAGEN`) VALUES
 (2, 'Hugo Ferney', 'Otavo', 'Varon', '3217518540', 'hugo@gmail.com', '1922Cejas.PNG'),
-(3, 'Milton', 'Otavo', 'Varón', '322321212', 'milton@gmail.com', '471616215_10203344202754048_8237009553896869607_n.jpg'),
-(4, 'Nicol', 'Mesa', 'Rengifo', '4343434', 'f.f@gmail.com', '190813095909_10206077034593136_2877799362829434374_n.jpg');
+(3, 'Milton', 'Otavo', 'Varon', '322321212', 'milton@gmail.com', '471616215_10203344202754048_8237009553896869607_n.jpg'),
+(4, 'Nicol', 'Mesa', 'Rengifo', '4343434', 'f.f@gmail.com', '190813095909_10206077034593136_2877799362829434374_n.jpg'),
+(5, 'Luz Miriam ', 'Varon', '', '3112002546', 'luz.varon@gmail.com', '');
 
 -- --------------------------------------------------------
 
@@ -62,7 +63,18 @@ CREATE TABLE `profesor_salon` (
 --
 
 INSERT INTO `profesor_salon` (`ID`, `ID_PROFESOR`, `ID_SALON`) VALUES
-(19, 3, 3);
+(19, 3, 3),
+(22, 2, 2),
+(23, 3, 2),
+(24, 3, 4),
+(25, 2, 3),
+(26, 2, 4),
+(27, 4, 2),
+(29, 4, 4),
+(31, 4, 3),
+(32, 5, 2),
+(33, 5, 3),
+(34, 5, 4);
 
 -- --------------------------------------------------------
 
@@ -81,36 +93,9 @@ CREATE TABLE `salones` (
 --
 
 INSERT INTO `salones` (`ID_SALON`, `NOMBRE`, `NUMERO`) VALUES
-(2, 'Salón sociales', '1'),
-(3, 'Salón De Informática ', '2'),
-(4, 'Salon Ambiental', '4');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `usuarios`
---
-
-CREATE TABLE `usuarios` (
-  `ID` bigint(255) NOT NULL,
-  `DOC` int(20) NOT NULL,
-  `USER` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `PASS` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
-  `EMAIL` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
-  `NOMBRES` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `P_APELLIDO` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `S_APELLIDO` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `KEYPASS` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `NEWPASS` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `ULTIMA_CONEXION` int(32) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`ID`, `DOC`, `USER`, `PASS`, `EMAIL`, `NOMBRES`, `P_APELLIDO`, `S_APELLIDO`, `KEYPASS`, `NEWPASS`, `ULTIMA_CONEXION`) VALUES
-(1, 1110540682, 'admin', 'd9529dbe59fa02092ee87e645ab6a516', 'milton.otavo@gmail.com', 'MILTON', 'OTAVO', 'VARON', '573e5feb61b20121114c322b050f0dfd', '9699F73A', 0);
+(2, 'Salón Sociales', '0001'),
+(3, 'Salón De Informática ', '0002'),
+(4, 'Salon Ambiental', '0003');
 
 --
 -- Índices para tablas volcadas
@@ -137,12 +122,6 @@ ALTER TABLE `salones`
   ADD PRIMARY KEY (`ID_SALON`);
 
 --
--- Indices de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`ID`);
-
---
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -150,22 +129,17 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `profesores`
 --
 ALTER TABLE `profesores`
-  MODIFY `DOCUMENTO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `DOCUMENTO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `profesor_salon`
 --
 ALTER TABLE `profesor_salon`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 --
 -- AUTO_INCREMENT de la tabla `salones`
 --
 ALTER TABLE `salones`
   MODIFY `ID_SALON` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `ID` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Restricciones para tablas volcadas
 --

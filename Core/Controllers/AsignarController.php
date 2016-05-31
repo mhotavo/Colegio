@@ -19,11 +19,6 @@ class AsignarController{
 		return $datos;
 	}
 
-	public function informeExcel(){
-		$this->PHPExcel = new PHPExcel();
-		header("Location:" . URL . "Asignar/listar");	
-	}
-
 	public function agregar(){
 		if ($_POST) {
 			$this->Asignar->__set("profesor", ucwords(strtolower($_POST['profesor'])) );

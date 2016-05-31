@@ -18,12 +18,14 @@ class Enrutador
 				$datos = call_user_func_array(array($controlador, $metodo), $argumento);
 			}
 		}
-			//Cargar vista
+		//Cargar vista
 		$ruta = ROOT . "HTML" . DS . ucwords($request->getControlador()) . DS . $request->getMetodo() . ".php";
 		if(is_readable($ruta)){
 			require_once $ruta;
 		}else{
-				#print "No se encontro la vista";
+				#No se encontro la vista
+			    #$ruta = ROOT . "HTML" . DS . "fail.html";  
+				#require_once $ruta;
 		}	
 	}
 }

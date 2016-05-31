@@ -9,8 +9,7 @@
 			<br>
 			<form class="form-horizontal" method="POST" name="form" id="form">
 				<div class="row">
-					<div class="col-md-1"></div>
-					<div class="col-md-5">
+					<div class="col-xs-12 col-sm-12 col-md-6">
 						<fieldset>
 							<div class="form-group">
 								<label for="inputEmail" class="col-lg-2 control-label">Profesor:</label>
@@ -18,11 +17,12 @@
 									<select class="form-control" name="profesor" id="profesor" required onchange="cargarSalones();">
 										<option value="">[...]</option>
 									</select>
+									<div id="resultado"></div>
 								</div>
 							</div> 	
 						</fieldset>
 					</div>
-					<div class="col-md-5">
+					<div class="col-xs-12 col-sm-12 col-md-6">
 						<fieldset>
 							<div class="form-group">
 								<label for="inputEmail" class="col-lg-2 control-label" >Salónes:</label>

@@ -1,8 +1,8 @@
-<!--<footer class="footer">
+<footer class="footer">
 	<div class="container">
 		<p>Milton Otavo &copy;</p>
 	</div>
-</footer>-->
+</footer>
 <script src="<?php echo URL; ?>Views/js/jquery.min.js"></script>
-<script src="<?php echo URL; ?>Views/js/functions.js"></script> 
+<script src="<?php echo URL; ?>Views/js/funciones.js"></script> 
 <script src="<?php echo URL; ?>Views/bootstrap/js/bootstrap.min.js"></script> 	

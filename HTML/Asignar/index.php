@@ -4,17 +4,17 @@
     <link rel="stylesheet" type="text/css" href="Views/DataTables/media/css/dataTables.bootstrap.css">
   </head>
   <body>
-    <?php include(HTML_DIR.'/overall/nav.php') ?><div id="container">
-    <h2 align="center">Profesores <i class="fa fa-exchange" aria-hidden="true"></i> Salónes</h2>
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-8">
+    <?php include(HTML_DIR.'/overall/nav.php') ?>
+    <div id="container">
+      <h2 align="center">Profesores <i class="fa fa-exchange" aria-hidden="true"></i> Salónes</h2>
+      <div class="col-xs-1 col-sm-1 col-md-1"></div>
+      <div class="col-xs-10 col-sm-10 col-md-10">
 
         <table class="table table-striped table-hover dataTable" id="ProfesoresTabla" >
           <thead>
             <tr>
-               
-              <th colspan="2">Profesor</th>
+              <th></th> 
+              <th>Profesor</th> 
               <th>Salón</th>
               <th>Acción</th> 
             </tr>
@@ -34,22 +34,28 @@
           </tbody>
         </table>
       </div>
-      <div class="col-md-2"></div>
-    </div>  
-  </div>
-  <?php include(HTML_DIR.'/overall/footer.php') ?> 
-  <script type="text/javascript" src="Views/DataTables/media/js/jquery.dataTables.js"></script>
-  <script type="text/javascript" src="Views/DataTables/media/js/dataTables.bootstrap.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $('.dataTable').DataTable({
-        "iDisplayLength": -1,
-        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-        "autoWidth": true,           
-        "sPaginationType": "full_numbers",
-        "order": [[ 0, 'asc' ], [ 1, 'asc' ]]
-      });
-    } );
-  </script>
-</body>
-</html> 
+      <div class="col-xs-1 col-sm-1 col-md-1"></div>
+      
+    </div>
+    <?php include(HTML_DIR.'/overall/footer.php') ?> 
+    <script type="text/javascript" src="Views/DataTables/media/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="Views/DataTables/media/js/dataTables.bootstrap.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.dataTable').DataTable({
+          "iDisplayLength": -1,
+          "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+          "autoWidth": true,           
+          "sPaginationType": "full_numbers",
+          "columns": [                 
+          { "orderable": false},     
+          null,
+          null,
+          null
+          ]
+
+        });
+      } );
+    </script>
+  </body>
+  </html> 
