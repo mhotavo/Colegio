@@ -15,7 +15,7 @@ function cargarSalones(){
 			$("#salones").append('<option value='+resp[i].salon+'>'+resp[i].nombre+'</option>');
 		}
 	}).error(function(e){
-		$("#resultado").append('<br><div class="alert alert-info">  El <strong>profesor</strong> seleccionado no tiene salones disponibles para asignar.</div>');
+		$("#resultado").append('<br><div class="alert alert-info">  <strong><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> No hay salones disponibles</strong> para el profesor seleccionado. </div>');
 	})
 }
 

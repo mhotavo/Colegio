@@ -23,9 +23,11 @@ class Enrutador
 		if(is_readable($ruta)){
 			require_once $ruta;
 		}else{
+			if ($request->getMetodo()!='listarprofesores' and $request->getMetodo()!='listarsalones') {
 				#No se encontro la vista
-			    #$ruta = ROOT . "HTML" . DS . "fail.html";  
-				#require_once $ruta;
+				$ruta = ROOT . "HTML" . DS . "fail.html";  
+				require_once $ruta;
+			} 
 		}	
 	}
 }

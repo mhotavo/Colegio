@@ -39,9 +39,15 @@ class AsignarController{
 	}	
 
 	public function listarSalones(){
-		$this->Asignar->__set("profesor", $_GET['profesor']);
-		$datos=$this->Asignar->salones(); 
-		echo json_encode( $datos, JSON_UNESCAPED_UNICODE );
+		if (!empty($_GET['profesor'])) {
+			$this->Asignar->__set("profesor", $_GET['profesor']);
+			$datos=$this->Asignar->salones(); 
+			echo json_encode( $datos, JSON_UNESCAPED_UNICODE );
+		} else {
+			$ruta = ROOT . "HTML" . DS . "fail.html";  
+			require_once $ruta;
+		}
+
 	}
 
 	public function listarProfesores(){

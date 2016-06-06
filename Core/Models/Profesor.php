@@ -58,6 +58,8 @@
 		}
 
 		public function delete(){
+			$sql="DELETE FROM profesor_salon WHERE ID_PROFESOR='{$this->documento}'";
+			$this->db->consultaSimple($sql);			
 			$sql="DELETE FROM profesores WHERE DOCUMENTO='{$this->documento}'";
 			$this->db->consultaSimple($sql);
 

@@ -45,6 +45,8 @@
 		}
 
 		public function delete(){
+			$sql="DELETE FROM profesor_salon WHERE ID_SALON='{$this->id}'";
+			$this->db->consultaSimple($sql);
 			$sql="DELETE FROM salones WHERE ID_SALON='{$this->id}'";
 			$this->db->consultaSimple($sql);
 
