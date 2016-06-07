@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-06-2016 a las 00:46:49
--- Versión del servidor: 10.1.9-MariaDB
--- Versión de PHP: 5.5.34
+-- Tiempo de generación: 07-06-2016 a las 02:20:33
+-- Versión del servidor: 10.1.13-MariaDB
+-- Versión de PHP: 5.6.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -41,10 +41,7 @@ CREATE TABLE `profesores` (
 --
 
 INSERT INTO `profesores` (`DOCUMENTO`, `NOMBRES`, `PRIMER_APELLIDO`, `SEGUNDO_APELLIDO`, `TELEFONO`, `EMAIL`, `IMAGEN`) VALUES
-(2, 'Hugo Ferney', 'Otavo', 'Varon', '3217518540', 'hugo@gmail.com', '1922Cejas.PNG'),
-(3, 'Milton', 'Otavo', 'Varon', '322321212', 'milton@gmail.com', '471616215_10203344202754048_8237009553896869607_n.jpg'),
-(4, 'Nicol', 'Mesa', 'Rengifo', '4343434', 'f.f@gmail.com', '190813095909_10206077034593136_2877799362829434374_n.jpg'),
-(5, 'Luz Miriam ', 'Varon', '', '3112002546', 'luz.varon@gmail.com', '');
+(6, 'Milton Hernando ', 'Otavo', 'Varon', '3112002546', 'milton.otavo@gmail.com', '1007FotoFondoAzul.png');
 
 -- --------------------------------------------------------
 
@@ -63,18 +60,8 @@ CREATE TABLE `profesor_salon` (
 --
 
 INSERT INTO `profesor_salon` (`ID`, `ID_PROFESOR`, `ID_SALON`) VALUES
-(19, 3, 3),
-(22, 2, 2),
-(23, 3, 2),
-(24, 3, 4),
-(25, 2, 3),
-(26, 2, 4),
-(27, 4, 2),
-(29, 4, 4),
-(31, 4, 3),
-(32, 5, 2),
-(33, 5, 3),
-(34, 5, 4);
+(36, 6, 3),
+(37, 6, 4);
 
 -- --------------------------------------------------------
 
@@ -95,7 +82,7 @@ CREATE TABLE `salones` (
 INSERT INTO `salones` (`ID_SALON`, `NOMBRE`, `NUMERO`) VALUES
 (2, 'Salón Sociales', '0001'),
 (3, 'Salón De Informática ', '0002'),
-(4, 'Salon Ambiental', '0003');
+(4, 'Salón Ambiental', '0003');
 
 --
 -- Índices para tablas volcadas
@@ -129,12 +116,12 @@ ALTER TABLE `salones`
 -- AUTO_INCREMENT de la tabla `profesores`
 --
 ALTER TABLE `profesores`
-  MODIFY `DOCUMENTO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `DOCUMENTO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `profesor_salon`
 --
 ALTER TABLE `profesor_salon`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 --
 -- AUTO_INCREMENT de la tabla `salones`
 --
