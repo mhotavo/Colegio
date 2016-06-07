@@ -40,7 +40,9 @@
           <a href="<?php echo URL; ?>asignar/agregar"  role="button" aria-expanded="false"> Asignar Salones&nbsp;<span class="fa fa-cog"></span></a>
         </li>
       </ul>
-
+      <ul class="nav navbar-nav navbar-right" style="color:white;position: relative;display: block; padding: 15px;font-size: 12px">
+      <li>&copy; Milton Hernando Otavo Varon</li>
+      </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

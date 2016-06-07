@@ -3,18 +3,14 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-06-2016 a las 02:20:33
--- Versión del servidor: 10.1.13-MariaDB
--- Versión de PHP: 5.6.20
+-- Tiempo de generación: 07-06-2016 a las 16:54:11
+-- Versión del servidor: 10.1.9-MariaDB
+-- Versión de PHP: 5.5.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de datos: `colegio`
@@ -82,7 +78,8 @@ CREATE TABLE `salones` (
 INSERT INTO `salones` (`ID_SALON`, `NOMBRE`, `NUMERO`) VALUES
 (2, 'Salón Sociales', '0001'),
 (3, 'Salón De Informática ', '0002'),
-(4, 'Salón Ambiental', '0003');
+(4, 'Salón Ambiental', '0003'),
+(5, 'Salón De Música ', '0004');
 
 --
 -- Índices para tablas volcadas
@@ -126,7 +123,7 @@ ALTER TABLE `profesor_salon`
 -- AUTO_INCREMENT de la tabla `salones`
 --
 ALTER TABLE `salones`
-  MODIFY `ID_SALON` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID_SALON` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Restricciones para tablas volcadas
 --
@@ -138,6 +135,3 @@ ALTER TABLE `profesor_salon`
   ADD CONSTRAINT `FK_PROFESOR` FOREIGN KEY (`ID_PROFESOR`) REFERENCES `profesores` (`DOCUMENTO`),
   ADD CONSTRAINT `FK_SALON` FOREIGN KEY (`ID_SALON`) REFERENCES `salones` (`ID_SALON`);
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
